@@ -68,6 +68,18 @@ router.post('/task/action/:id/:action', (req, res) => {
                 message: 'Updated Successfully'
             })
         })
+    } else if(req.params.action === 'remove') {
+        taskTemplateCopy.deleteOne({ _id: req.params.id }, (err) => {
+            if(!err) {
+                taskTrackTemplateCopy.deleteMany({ taskId: req.params.id }, (err) => {
+                    if(!err) {
+                        res.json({
+                            message: 'Deleted successfully'
+                        })
+                    }
+                })
+            }
+        })
     }
 });
 
