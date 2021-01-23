@@ -12,8 +12,8 @@ router.post('/add', (req, res) => {
         const taskId = data._id;
         const task_track = new taskTrackTemplateCopy({
             taskId,
-            startTime: Date.now(),
-            endTime: null
+            startTime: req.body.startTime ?? Date.now(),
+            endTime: req.body.endTime ?? null
         });
         const promises = [Promise.resolve(data)];
         promises.push(task_track.save());
@@ -30,11 +30,7 @@ router.post('/add', (req, res) => {
 
 router.get('/getAll', (req, res) => {
     taskTemplateCopy.find({}, function (err, tasks) {
-        var tasksMap = {};
-        tasks.forEach(function (user) {
-            tasksMap[user._id] = user;
-        });
-        res.send(tasksMap);
+        res.send(tasks);
     });
 })
 
