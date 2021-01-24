@@ -7,8 +7,7 @@ Please create a .env in the root of the project and copy the following content i
 DB_ACCESS = "mongodb+srv://username:password@cluster0.a610m.mongodb.net/sample_incloud?retryWrites=true&w=majority"
 
 where,
-username = rjvirus
-password = admin
+username = rjvirus ; password = admin
 
 _____________________________________________________________________________________________________
 
