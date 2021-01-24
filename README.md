@@ -1,13 +1,12 @@
 You can use this by downloading the zip file and extracting it.
 
+________________________________________________________________________________________________________
+
 **IMPORTANT
 
-Please create a new file with the name .env in the root of the project and copy the following content into the file :
+Please create a new file with the name .env in the root of the project and copy the following content into the file where username='rjvirus' and password='admin'  :
 
 DB_ACCESS = "mongodb+srv://username:password@cluster0.a610m.mongodb.net/sample_incloud?retryWrites=true&w=majority"
-
-where,
-username = rjvirus ; password = admin
 
 _____________________________________________________________________________________________________
 
