@@ -6,7 +6,8 @@ const router = express.Router();
 router.post('/add', (req, res) => {
     const myTask = new taskTemplateCopy({
         name: req.body.name,
-        description: req.body.description
+        description: req.body.description,
+        createdOn: Date.now()
     });
     myTask.save().then((data) => {
         const taskId = data._id;
@@ -29,8 +30,13 @@ router.post('/add', (req, res) => {
 });
 
 router.get('/getAll', (req, res) => {
-    taskTemplateCopy.find({}, function (err, tasks) {
-        res.send(tasks);
+    taskTemplateCopy.find({}, null, { sort: { createdOn: -1 } }, function (err, tasks) {
+        if(err) {
+            res.json(err)
+        }
+        else {
+            res.send(tasks);
+        }
     });
 })
 

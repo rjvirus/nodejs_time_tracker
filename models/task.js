@@ -7,6 +7,10 @@ const taskTemplate = new mongoose.Schema({
     },
     description: {
         type: String
+    },
+    createdOn: {
+        type: Date,
+        required: true
     }
 })
 
