@@ -1,6 +1,16 @@
-You can use this by downloading the zip file.
+You can use this by downloading the zip file and extracting it.
 
-First, we need to run npm install to get all the libraries
+**IMPORTANT
+Please create a .env in the root of the project and copy the following content into the file :-
+DB_ACCESS = "mongodb+srv://<username>:<password>@cluster0.a610m.mongodb.net/sample_incloud?retryWrites=true&w=majority"
+
+where,
+<username> = rjvirus
+<password> = admin
+
+_____________________________________________________________________________________________________
+
+Now, we need to run npm install in the terminal to get all the libraries
 Secondly, we need to run 'npm run start' in terminal to run the server
 
 Server usually loads in localhost:4000
